@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>input type file size upload</title>
+</head>
+<body>
+	<center>
+		<label for="">select file limit :2mb</label>
+	    <input type="file" id="size">
+	    <button onclick="validatesize()">Upload</button>
+    </center>
+    <script>
+    	const input = document.querySelector('input[type="file"]');
+    	const userinfo = "";
+        // alert("all is well");
+    	function validatesize() {
+    		const file = input.files[0];
+
+    		if (!file){
+    			alert("no file selected");
+    		}
+
+    		const limit = 2000;
+    		const size = file.size / 1024;
+
+    		if (size > limit){
+    			alert("file size is too big");	
+    		}
+    		else{
+    			alert("file size is okay");
+    		}
+    	}
+    	
+    </script>
+</body>
+</html>
